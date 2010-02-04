@@ -17,7 +17,7 @@ class RSettings < ActiveRecord::Base
   validates_presence_of :key
   validates_uniqueness_of :key, :scope => [:object_type, :object_id]
 
-  attr_accessible :formatted_value, :key, :data_type, :object_id, :object_type
+  attr_accessible :formatted_value, :key, :data_type, :object_id, :object_type, :description
   attr_readonly :key, :data_type
 
   after_save :delete_cache
